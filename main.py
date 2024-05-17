@@ -38,9 +38,9 @@ for key in input_example.keys():
 # When the user clicks the predict button, the model will be called
 
 if st.sidebar.button('Predict'):
-    response = requests.post('http://143.198.24.173.8080:8080/inference', json=inputs)
+    response = requests.post('http://143.198.24.173:8080/predict', json=inputs)
     prediction = response.json()
     
-    st.write(f"Prediction: ,{prediction['prediction']}")
+    st.write(f"Predicted price change: {prediction['prediction']}")
 
     
